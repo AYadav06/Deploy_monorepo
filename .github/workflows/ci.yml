@@ -6,7 +6,7 @@ on:
 jobs:
     Continuous_Integration:
         name: Check for commit on main
-        runs-on: ubunut-latest
+        runs-on: ubuntu-latest
 
         steps:
           - name: Checkout the Repository
