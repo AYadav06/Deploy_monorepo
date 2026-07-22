@@ -13,9 +13,9 @@ jobs:
                 SSH_KEY: ${{secrets.SSH_KEY}}
             run: |
               mkdir -p ~/.ssh
-              eval "$(ssh-agent-s)"
-              echo "$SSH_KEY" | tr -d '\r' | ssh-add-
-              ssh-keycan -H "$HOST" >> ~/.ssh/known_hosts
+              eval "$(ssh-agent -s)"
+              echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+              ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
               ssh  $ubuntu@13.63.130.132 << 'EOF'
                   set -e 
                   ls 
