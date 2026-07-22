@@ -25,6 +25,7 @@ jobs:
                   cd Deploy_monorepo
                   git checkout main
                   git pull origin main
+                  source ~/.bashrc
                   pnpm install
                   pm2 restart all
                   EOF
