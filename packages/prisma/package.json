@@ -7,6 +7,9 @@
   "author": "",
   "license": "ISC",
   "module": "ESNext",
+  "scripts": {
+    "generate":"prisma generate"
+  },
 "exports":{
   "./client":"./src/index.ts"
 },
