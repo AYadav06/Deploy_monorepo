@@ -22,6 +22,7 @@ jobs:
               ssh  "$USER@$HOST" << 'EOF'
                   set -e 
                   ls 
+                  export PATH="/home/ubuntu/.nvm/versions/node/v24.18.0/bin:$PATH"
                   node -v
                   pnpm -v
                   cd Deploy_monorepo
@@ -30,7 +31,7 @@ jobs:
                   source ~/.bashrc
                   pnpm install
                   pm2 restart all
-               EOF
+              EOF
 
 
       
