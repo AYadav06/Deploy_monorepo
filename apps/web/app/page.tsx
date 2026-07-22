@@ -10,7 +10,7 @@ import { client } from "@repo/db/client";
 export default function Home() {
   return (
     <div className={styles.page}>
-      Hello world ... testing monorepoly deployment ....
+      Hello world ... testing monorepoly deployment .... testing to deploy on ec2
     </div>
   );
 }
