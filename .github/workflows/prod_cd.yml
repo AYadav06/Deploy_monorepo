@@ -11,12 +11,15 @@ jobs:
           - name: deploy
             env: 
                 SSH_KEY: ${{secrets.SSH_KEY}}
+                HOST: ${{secrets.HOST}}
+                USER: ${{secrets.USER}}
+
             run: |
               mkdir -p ~/.ssh
               eval "$(ssh-agent -s)"
               echo "$SSH_KEY" | tr -d '\r' | ssh-add -
               ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
-              ssh  $ubuntu@13.63.130.132 << 'EOF'
+              ssh  "$USER$HOST" << 'EOF'
                   set -e 
                   ls 
                   cd Deploy_monorepo
