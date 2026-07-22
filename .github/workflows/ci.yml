@@ -14,11 +14,11 @@ jobs:
             
           - name: Setup NodeJs
             uses: actions/setup-node@v6
-            with:
-              cache: pnpm
             
           - name: Install Pnpm
             uses: pnpm/action-setup@v4
+            with:
+              cache: pnpm
             
           - name: Install Dependencies
             run:  pnpm install --frozen-lockfile
