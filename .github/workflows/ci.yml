@@ -12,14 +12,15 @@ jobs:
           - name: Checkout the Repository
             uses: action/checkout@v6
             
+          - name: Setup NodeJs
+            uses: actions/setup-node@v6
+            
           - name: Install Pnpm
             uses: pnpm/action-setup@v6
             with:
                 version: 11
                 cache: true
             
-          - name: Setup NodeJs
-            uses: actions/setup-node@v6
              
           - name: Install Dependencies
             run:  pnpm install --frozen-lockfile
